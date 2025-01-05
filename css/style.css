@@ -1,0 +1,693 @@
+/* Reset ve Genel Stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --sidebar-bg: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #e9ecef;
+    --hover-color: #e9ecef;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Stilleri */
+.sidebar {
+    width: 300px;
+    background-color: var(--sidebar-bg);
+    padding: 2rem;
+    position: fixed;
+    height: 100vh;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 3px solid var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.profile-section p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+/* Ana Navigasyon */
+.main-nav {
+    margin: 2rem 0;
+    flex-grow: 1;
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav a {
+    display: block;
+    padding: 0.75rem 0;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.main-nav a:hover {
+    color: var(--secondary-color);
+    padding-left: 0.5rem;
+    background-color: var(--hover-color);
+}
+
+/* Dil Değiştirme Butonları */
+.language-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.lang-btn:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+.lang-btn.active {
+    opacity: 1;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.lang-separator {
+    color: var(--border-color);
+    font-weight: 300;
+}
+
+/* Sosyal Medya Linkleri */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Ana İçerik Alanı */
+.main-content {
+    margin-left: 300px;
+    padding: 2rem;
+    width: calc(100% - 300px);
+}
+
+.section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Yayınlar Listesi */
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.publication-item {
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.publication-item:hover {
+    transform: translateX(10px);
+}
+
+/* Dersler Listesi */
+.courses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.course-item {
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+}
+
+/* İletişim Bilgileri */
+.contact-info {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.contact-details {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Araştırma Alanları */
+.research-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.research-item {
+    background-color: var(--light-bg);
+    padding: 1rem;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.research-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Yayınlar Listesi Güncellemeleri */
+.publication-item {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.publication-title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.publication-authors {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.publication-journal {
+    font-style: italic;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.publication-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.pub-link:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.pub-link.pdf i {
+    color: #dc3545;
+}
+
+.pub-link:hover i {
+    color: var(--white);
+}
+
+/* İletişim Bölümü Güncellemeleri */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    width: 24px;
+    text-align: center;
+}
+
+.contact-item p {
+    margin: 0;
+}
+
+/* Biyografi Bölümü Stilleri */
+.bio-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    text-align: justify;
+    hyphens: auto;
+}
+
+.biography-content {
+    text-align: justify;
+    hyphens: auto;
+}
+
+.education-section,
+.academic-positions,
+.research-interests-section {
+    margin-top: 2.5rem;
+}
+
+.education-section h3,
+.academic-positions h3,
+.research-interests-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.education-list,
+.positions-list,
+.interests-list {
+    list-style: none;
+    padding: 0;
+}
+
+.education-list li,
+.positions-list li {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.education-list li:hover,
+.positions-list li:hover {
+    transform: translateX(10px);
+}
+
+.year {
+    min-width: 120px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.education-detail,
+.position-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.education-detail strong,
+.position-detail strong {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.education-detail span,
+.position-detail span {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.interests-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.interests-list li {
+    padding: 1rem;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.interests-list li:hover {
+    transform: translateY(-5px);
+}
+
+/* Yabancı Diller Bölümü */
+.languages-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.languages-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.languages-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.languages-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.languages-list li:hover {
+    transform: translateY(-3px);
+}
+
+.languages-list span {
+    color: var(--text-color);
+}
+
+.languages-list .level {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 250px;
+    }
+    
+    .main-content {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .main-nav {
+        margin: 1rem 0;
+    }
+    
+    .section h2 {
+        font-size: 1.75rem;
+    }
+
+    .research-list {
+        grid-template-columns: 1fr;
+    }
+
+    .publication-item {
+        padding: 1rem;
+    }
+
+    .contact-item {
+        padding: 0.75rem;
+    }
+
+    .education-list li,
+    .positions-list li {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .year {
+        min-width: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .interests-list {
+        grid-template-columns: 1fr;
+    }
+
+    .languages-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Yayınlar Bölümü Güncellemeleri */
+.publications-filter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: var(--light-bg);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.publication-item {
+    position: relative;
+    padding: 1.5rem;
+    background-color: var(--light-bg);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.publication-item:hover {
+    transform: translateX(10px);
+}
+
+.pub-year {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.publication-title {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    padding-right: 4rem;
+}
+
+.publication-authors {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.publication-journal {
+    font-style: italic;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.publication-index {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: var(--secondary-color);
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Metrikler Bölümü */
+.metrics-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.metrics-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.metric-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.metric-item:hover {
+    transform: translateY(-5px);
+}
+
+.metric-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Responsive Güncellemeler */
+@media (max-width: 768px) {
+    .publications-filter {
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        flex: 1 1 auto;
+    }
+
+    .publication-title {
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+
+    .pub-year {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}

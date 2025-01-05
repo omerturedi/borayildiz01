@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetim Paneli - Prof. Dr. Bora Yıldız</title>
+    
+    <!-- CSS Bağlantıları -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="admin-page">
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="admin-profile">
+            <img src="../images/profile-photo.jpg" alt="Prof. Dr. Bora Yıldız" class="admin-avatar">
+            <h2>Prof. Dr. Bora Yıldız</h2>
+            <p>Yönetici</p>
+        </div>
+        
+        <nav class="admin-nav">
+            <ul>
+                <li>
+                    <a href="#" class="active" data-section="dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Ana Sayfa</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="profile">
+                        <i class="fas fa-user"></i>
+                        <span>Profil Bilgileri</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="publications">
+                        <i class="fas fa-book"></i>
+                        <span>Yayınlar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="content">
+                        <i class="fas fa-edit"></i>
+                        <span>İçerik Düzenleme</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="files">
+                        <i class="fas fa-file-upload"></i>
+                        <span>Dosya Yönetimi</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="admin-footer">
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Çıkış Yap</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Ana İçerik -->
+    <main class="admin-content">
+        <!-- Üst Bar -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button id="sidebarToggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 id="pageTitle">Yönetim Paneli</h1>
+            </div>
+            <div class="header-right">
+                <a href="../index.html" target="_blank" class="view-site-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Siteyi Görüntüle</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- İçerik Bölümleri -->
+        <div class="content-sections">
+            <!-- Dashboard Bölümü -->
+            <section id="dashboard" class="section active">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <i class="fas fa-book"></i>
+                        <h3>Yayınlar</h3>
+                        <p class="count">15</p>
+                        <a href="#" class="card-link" data-section="publications">Yönet</a>
+                    </div>
+                    <div class="dashboard-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h3>PDF Dosyaları</h3>
+                        <p class="count">8</p>
+                        <a href="#" class="card-link" data-section="files">Yönet</a>
+                    </div>
+                    <div class="dashboard-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Görüntülenme</h3>
+                        <p class="count">1,234</p>
+                        <span class="trend up">+12%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profil Düzenleme Bölümü -->
+            <section id="profile" class="section">
+                <div class="section-header">
+                    <h2>Profil Bilgileri</h2>
+                    <button class="save-btn" id="saveProfile">
+                        <i class="fas fa-save"></i>
+                        Kaydet
+                    </button>
+                </div>
+                <div class="profile-form">
+                    <div class="form-group">
+                        <label>Profil Fotoğrafı</label>
+                        <div class="profile-photo-upload">
+                            <img src="../images/profile-photo.jpg" alt="Profil" id="profilePreview">
+                            <input type="file" id="profilePhoto" accept="image/*">
+                            <label for="profilePhoto" class="upload-btn">
+                                <i class="fas fa-camera"></i>
+                                Fotoğraf Değiştir
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ad Soyad</label>
+                            <input type="text" value="Prof. Dr. Bora Yıldız">
+                        </div>
+                        <div class="form-group">
+                            <label>Unvan</label>
+                            <input type="text" value="Profesör">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>E-posta</label>
+                            <input type="email" value="bora.yildiz@istanbul.edu.tr">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon</label>
+                            <input type="tel" value="+90 212 XXX XX XX">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Biyografi</label>
+                        <textarea rows="6">Prof. Dr. Bora Yıldız, İstanbul Üniversitesi İktisat Fakültesi'nde görev yapmaktadır...</textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Yayınlar Bölümü -->
+            <section id="publications" class="section">
+                <div class="section-header">
+                    <h2>Yayınlar</h2>
+                    <button class="add-btn" id="addPublication">
+                        <i class="fas fa-plus"></i>
+                        Yeni Yayın Ekle
+                    </button>
+                </div>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="pub-info">
+                            <h3>Effects of positive and negative cyberloafing...</h3>
+                            <p>International Journal of Occupational Safety and Ergonomics, 2024</p>
+                        </div>
+                        <div class="pub-actions">
+                            <button class="edit-btn">
+                                <i class="fas fa-edit"></i>
+                                Düzenle
+                            </button>
+                            <button class="delete-btn">
+                                <i class="fas fa-trash"></i>
+                                Sil
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Diğer yayınlar buraya eklenecek -->
+                </div>
+            </section>
+
+            <!-- İçerik Düzenleme Bölümü -->
+            <section id="content" class="section">
+                <div class="section-header">
+                    <h2>İçerik Düzenleme</h2>
+                    <button class="save-btn" id="saveContent">
+                        <i class="fas fa-save"></i>
+                        Değişiklikleri Kaydet
+                    </button>
+                </div>
+                <div class="content-editor">
+                    <div class="editor-sidebar">
+                        <h3>Bölümler</h3>
+                        <ul class="section-list">
+                            <li class="active">Ana Sayfa</li>
+                            <li>Biyografi</li>
+                            <li>Araştırma</li>
+                            <li>Dersler</li>
+                            <li>İletişim</li>
+                        </ul>
+                    </div>
+                    <div class="editor-main">
+                        <div class="editor-field">
+                            <label>Başlık</label>
+                            <input type="text" value="Prof. Dr. Bora Yıldız">
+                        </div>
+                        <div class="editor-field">
+                            <label>İçerik</label>
+                            <textarea class="rich-editor" rows="12">Site içeriği buraya gelecek...</textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dosya Yönetimi Bölümü -->
+            <section id="files" class="section">
+                <div class="section-header">
+                    <h2>Dosya Yönetimi</h2>
+                    <button class="upload-btn" id="uploadFile">
+                        <i class="fas fa-upload"></i>
+                        Dosya Yükle
+                    </button>
+                </div>
+                <div class="files-grid">
+                    <div class="file-card pdf">
+                        <div class="file-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="file-info">
+                            <h4>cyberloafing-safety-behaviors.pdf</h4>
+                            <p>1.2 MB · 12 Ara 2023</p>
+                        </div>
+                        <div class="file-actions">
+                            <button class="action-btn" title="İndir">
+                                <i class="fas fa-download"></i>
+                            </button>
+                            <button class="action-btn" title="Sil">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Diğer dosyalar buraya eklenecek -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../js/admin.js"></script>
+</body>
+</html> 
