@@ -4,6 +4,7 @@ const translations = {
         'name': 'Prof. Dr. Bora Yıldız',
         'title': 'Profesör',
         'home': 'Ana Sayfa',
+        'admin-login': 'Yönetici Girişi',
         'biography': 'Biyografi',
         'research': 'Araştırma',
         'publications': 'Yayınlar',
@@ -74,6 +75,7 @@ const translations = {
         'name': 'Prof. Dr. Bora Yildiz',
         'title': 'Professor',
         'home': 'Home',
+        'admin-login': 'Admin Login',
         'biography': 'Biography',
         'research': 'Research',
         'publications': 'Publications',
@@ -144,7 +146,16 @@ const translations = {
 
 // Dil değiştirme fonksiyonu
 function changeLanguage(lang) {
-    console.log('Changing language to:', lang); // Debug için log
+    console.log('Changing language to:', lang);
+    
+    // Dil butonlarının aktif durumunu güncelle
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
     
     // Tüm çevrilebilir elementleri bul
     document.querySelectorAll('[data-tr]').forEach(element => {
@@ -165,6 +176,9 @@ function changeLanguage(lang) {
 
     // HTML lang özelliğini güncelle
     document.documentElement.lang = lang;
+    
+    // Dil tercihini localStorage'a kaydet
+    localStorage.setItem('preferredLanguage', lang);
 }
 
 // Sayfa yüklendiğinde
@@ -173,6 +187,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const lang = e.target.getAttribute('data-lang');
+            
+            // Tüm butonlardan active sınıfını kaldır
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            
+            // Tıklanan butona active sınıfını ekle
+            e.target.classList.add('active');
+            
             changeLanguage(lang);
         });
     });
